@@ -36,6 +36,8 @@ public class Inventory {
 	private Integer iEquiptedaChest; //Index of item equipted on the Chest.
 	private Integer iEquiptedLegs; //Index of item equipted on the Legs.
 	private Integer iEquiptedFeet; //Index of item equipted on the Feet.
+	private String sCR = System.getProperty("line.separator"); //Carriage Return
+	private String sTab = "\t";
 	
 	
 	public Inventory()
@@ -47,6 +49,19 @@ public class Inventory {
 	{
 		Items = new ArrayList<Item>();
 		iCapacity = 5;
+		
+		//Adding basic items for testing.
+		Item i = new Item("Pulse Blaster", "Standard imperial pulse blaster issueed to infantry Stormtroopers as their primary weapon.  "
+				+ "Mass produced and woefully inaccurate the empire relies on statistical battle dominance by increasing the ciclical rate which is higher than most weapons of this class.",
+				10, -1, false);
+		Items.add(i);
+		i = new Item("Small Med Pack", "Standard imperial issue medical pack with bacta injection.  "
+				+ "While not very pleasent these small bacta injections will keep you from dieing as long as you are not already dead and will stabilize the patient and are intended for self treatment.",
+				-2, 1, false);
+		Items.add(i);
+		
+		
+		
 	}
 	
 	public void Add(Item I)
@@ -80,13 +95,14 @@ public class Inventory {
 		 * The player is able to list the items currently available in the inventory by typing in “inventory”. 
 		Doing so shows the player the available list of weapons, ammunition, equipment, rations, medical supplies, etc. 
 		 */
-		String s = "";
+		String s = "___________________________________________________" + sCR;
 		
 		for(Item inv:Items)
 		{
-			s += "Name: " + inv.getName() + System.getProperty("line.separator");
-			s += "Damage: " + inv.getDamage() + System.getProperty("line.separator");
-			s += "Remaining Uses: " + inv.getDamage() + System.getProperty("line.separator");
+			s += "Name: " + inv.getName() + sCR;
+			s += "Damage: " + inv.getDamage() + sCR;
+			s += "Remaining Uses: " + inv.getDamage() + sCR;
+			s += "___________________________________________________" + sCR;
 		}
 		
 		return s;

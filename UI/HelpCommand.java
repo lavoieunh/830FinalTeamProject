@@ -2,7 +2,7 @@ package UI;
 
 public class HelpCommand implements Commandable{
 
-	private String sHelpCommands = "Command Help: 'Quit', 'Help', 'Inventory', 'Sort:<Author|Title|Year|NoSort>'";
+	private String sHelpCommands = "Command Help: 'Quit', 'Help', 'Inventory'";
 	
 	public HelpCommand(MyGame g)
 	{
