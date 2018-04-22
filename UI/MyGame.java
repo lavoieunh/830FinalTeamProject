@@ -8,10 +8,7 @@ import BaseGame.Inventory;
 import BaseGame.InventoryCommand;
 
 public class MyGame {
-/*
-  This is stubbed out code that allows the basic interface and game to run.
 
- */
 	public List<Commandable> UserCommands = new ArrayList<Commandable>();
 	public HelpCommand HelpMe = new HelpCommand(this);
 	public QuitCommand QuitMe = new QuitCommand(this);
@@ -27,7 +24,7 @@ public class MyGame {
 	
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		MyGame mG = new MyGame();
 		mG.Run();
 		

@@ -2,6 +2,7 @@ package BaseGame;
 
 import UI.Commandable;
 import UI.MyGame;
+import UI.UserInterface;
 
 public class InventoryCommand implements Commandable {
 
@@ -12,7 +13,9 @@ public class InventoryCommand implements Commandable {
 	
 	@Override
 	public void doCommand(MyGame g) {
-		// TODO Auto-generated method stub
+		
+		UserInterface.UserOutput(g.BeltAndBackPack.List());
+	
 
 	}
 
