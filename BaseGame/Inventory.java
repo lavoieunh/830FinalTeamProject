@@ -24,6 +24,8 @@ import UI.UserInterface;
 		Player can exit inventory view 
 		Prompt will confirm exit 
 		    If no confirmation given, loop until confirmation provided  
+		    
+		Add the selection of the inventory using a secondary command class that will consume equip the item using it's Inventory Array index.
  */
 
 public class Inventory {
@@ -99,6 +101,7 @@ public class Inventory {
 		
 		for(Item inv:Items)
 		{
+			s += "Slot#:" + Items.indexOf(inv) + sCR;
 			s += "Name: " + inv.getName() + sCR;
 			s += "Damage: " + inv.getDamage() + sCR;
 			s += "Remaining Uses: " + inv.getDamage() + sCR;
