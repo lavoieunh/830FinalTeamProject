@@ -24,13 +24,13 @@ public class Item {
  */
 	
 	
-	public Item(String Name, String Description, Integer DPS, Integer UseCount)
+	public Item(String Name, String Description, Integer DPS, Integer UseCount, boolean equipStatus)
 	{
 		setName(Name);
 		setDescription(Description);
 		setDamage(DPS);
 		setNumberOfUses(UseCount);
-		
+		setEquipStatus(equipStatus);
 		
 	}
 	
@@ -38,7 +38,7 @@ public class Item {
 	private String sDescription = "";
 	private Integer DamagePerSecond = 0; //Negative numbers provide defense "armor" against damage
 	private Integer NumberOfUses = -1; //-1 is unlimited
-	
+	boolean equipStatus;
 	
 	
 	public String getName()
@@ -67,6 +67,14 @@ public class Item {
 	public void setDamage(Integer Damage)
 	{
 		DamagePerSecond = Damage;
+	}
+	
+	public void setEquipStatus(boolean EquipStatus) {
+		equipStatus = EquipStatus;
+	}
+	
+	boolean getEquipStatus() {
+		return equipStatus;
 	}
 	
 	public void setUses(Integer NUses)
