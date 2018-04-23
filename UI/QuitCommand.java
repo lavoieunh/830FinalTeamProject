@@ -18,9 +18,14 @@ implements Commandable
 	@Override
 	public boolean matchCommand(String s) {
 		
-		return s.toUpperCase().equals("QUIT");
+		return s.toUpperCase().equals(getCommandText().toUpperCase()); //returns true for match and false for no match.
 		
-		
+	}
+
+	@Override
+	public String getCommandText() {
+		// TODO Auto-generated method stub
+		return "Quit";
 	}
 
 }

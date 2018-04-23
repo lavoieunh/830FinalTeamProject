@@ -13,8 +13,13 @@ public class EquipCommand implements Commandable {
 
 	@Override
 	public boolean matchCommand(String s) {
-		// TODO Auto-generated method stub
-		return false;
+		return s.toUpperCase().equals(getCommandText().toUpperCase()); //returns true for match and false for no match.
+	}
+
+	@Override
+	public String getCommandText() {
+		
+		return "Equip";
 	}
 
 }
