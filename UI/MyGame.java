@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import BaseGame.Inventory;
 import BaseGame.InventoryCommand;
+import BaseGame.ItemDescribeCommand;
 
 public class MyGame {
 
@@ -15,6 +16,7 @@ public class MyGame {
 	//public ListCommand ListMe = new ListCommand(this);
 	//public SortCommand SortMe = new SortCommand(this);
 	public InventoryCommand InvMe = new InventoryCommand(this);
+	public ItemDescribeCommand ItmDescMe = new ItemDescribeCommand(this);
 	
 	public Inventory BeltAndBackPack = new Inventory();
 	private Boolean bolQuit = false;

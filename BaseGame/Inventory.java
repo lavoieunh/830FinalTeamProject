@@ -104,7 +104,7 @@ public class Inventory {
 			s += "Slot#:" + Items.indexOf(inv) + sCR;
 			s += "Name: " + inv.getName() + sCR;
 			s += "Damage: " + inv.getDamage() + sCR;
-			s += "Remaining Uses: " + inv.getDamage() + sCR;
+			s += "Remaining Uses: " + inv.getNumberOfUses() + sCR;
 			s += "___________________________________________________" + sCR;
 		}
 		
@@ -141,5 +141,9 @@ public class Inventory {
 		Output += "Commands: List, Describe, Equip, ";
 		UserInterface.UserOutput(Output);
 	}
-	
+
+	public Item getItem(Integer i)
+	{
+		return Items.get(i);
+	}
 }

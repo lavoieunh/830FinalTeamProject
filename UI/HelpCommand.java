@@ -47,7 +47,7 @@ public class HelpCommand implements Commandable{
 		
 		for(String s:sCommands)
 		{
-			sHelpCommands += "| " + s;
+			sHelpCommands += "| " + s + " ";
 		}
 		
 		return sHelpCommands;
