@@ -12,8 +12,8 @@ public class MyGame {
 	public List<Commandable> UserCommands = new ArrayList<Commandable>();
 	public HelpCommand HelpMe = new HelpCommand(this);
 	public QuitCommand QuitMe = new QuitCommand(this);
-	public ListCommand ListMe = new ListCommand(this);
-	public SortCommand SortMe = new SortCommand(this);
+	//public ListCommand ListMe = new ListCommand(this);
+	//public SortCommand SortMe = new SortCommand(this);
 	public InventoryCommand InvMe = new InventoryCommand(this);
 	
 	public Inventory BeltAndBackPack = new Inventory();
@@ -30,17 +30,20 @@ public class MyGame {
 		
 	}
 	
+	private void InitializeHelpText()
+	{
+		for(Commandable c:UserCommands)
+		{
+			HelpMe.Subscribe(c.getCommandText());
+		}
+	}
 
 	private void Run()
 	{
 		this.bolQuit = false;
+		InitializeHelpText();
 		Scanner inputScanner = new Scanner(System.in);
-		/*
-		Subscribe(this.HelpMe);
-		Subscribe(this.QuitMe);
-		Subscribe(this.ListMe);
-		Subscribe(this.SortMe);		
-		*/
+
 		UserInterface.UserOutput("Welcome!  You are now playing Escape From Endor!" + sCR + sCR);
 
 		UserInterface.UserOutput(sCR + "You are the AT-ST driver pulled, by Chewbacca, from the AT-ST and commandeered by Chewbacca and two Ewoks and you find yourself lying on the floor of the forest moon" + sCR 

@@ -55,4 +55,11 @@ public class SortCommand implements Commandable {
 		//return s.toUpperCase().equals("SORT"); //returns true for match and false for no match.
 	}
 
+
+	@Override
+	public String getCommandText() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

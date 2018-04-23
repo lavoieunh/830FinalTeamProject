@@ -22,7 +22,13 @@ public class InventoryCommand implements Commandable {
 	@Override
 	public boolean matchCommand(String s) {
 		
-		return s.toUpperCase().equals("INVENTORY"); //returns true for match and false for no match.
+		return s.toUpperCase().equals(getCommandText().toUpperCase()); //returns true for match and false for no match.
+	}
+
+	@Override
+	public String getCommandText() {
+		// TODO Auto-generated method stub
+		return "Inventory";
 	}
 	
 }
