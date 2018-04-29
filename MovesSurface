@@ -4,3 +4,9 @@ The player can move around the map by entering the direction and magnitude (Vect
 
 If player move (direction and magnitude) is not obstructed move.
 If player move obstructed stop player move, display message you have run into <obstacle>.
+
+4/29/2018 - rfw118
+In order to simplyfy the game play and the movement the movement should be limited to 4 directions North, South, East, West (N,S,E,W).
+The player will be presented with a discription of the map grid 4X4 which will be described once the player moves to the location. 
+The movement class will send the movement direction to the map and the map.  The map class will control the success or failure of the movment
+and update the current description of the location.
