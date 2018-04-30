@@ -1,0 +1,11 @@
+Player created at game start
+Prerequisite player created: game is initialized. 
+
+Player is created at the start of the game when, in the storyline, the Imperial AT-ST trooper is pulled from his AT-ST by 
+Chewbacca and thrown to the forest floor of Endor. 
+
+Prerequisite: Player has not died due to player health reacing 0.
+Player is able to use equipment listed.
+Player is able to regain health through use of MedPack. 
+Player is able to move.  
+Player is able to attack.
