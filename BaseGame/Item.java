@@ -52,6 +52,7 @@ public class Item {
 	
 	public String getDescription()
 	{
+	
 		return sDescription;
 	}
 	public void setDescription(String Desc)
@@ -85,11 +86,6 @@ public class Item {
 	public void setNumberOfUses(Integer ItemUseCount)
 	{
 		NumberOfUses = ItemUseCount;
-	}
-	
-	public Integer getNumberOfUses()
-	{
-		return NumberOfUses;
 	}
 	
 	public void UseItem()
