@@ -28,25 +28,23 @@ import org.junit.matchers.JUnitMatchers;
 
 class InventoryTest {
 	
-	///Inventory tested =  (Inventory.class, "iCapcity"  ) 
 	
-	/*
 	@Test
 	public void testInventory()
 	{
-		Inventory inv = new Inventory();
-		assertEquals(inv, inv.InitializeVariables);
-		//review how to assign 
+		
+		testInitializeVariables();
+		//assertEquals(inv, inv.InitializeVariables);
 	}
-	*/
+	
 	
 	
 	@Test
 	public void testInitializeVariables() {
 		
-		ArrayList<Item> Items;
-		Items = new ArrayList<Item>();
-		Inventory test = new Inventory();
+		ArrayList<Item> Itemd = new ArrayList<Item>();
+		//Inventory test = new Inventory();
+		
 		
 		//iCapacity = 5;
 		
@@ -54,58 +52,40 @@ class InventoryTest {
 		Item i = new Item("Pulse Blaster", "Standard imperial pulse blaster issueed to infantry Stormtroopers as their primary weapon.  "
 				+ "Mass produced and woefully inaccurate the empire relies on statistical battle dominance by increasing the cyclical rate which is higher than most weapons of this class.",
 				10, -1, false);
-		Items.add(i); 
+		Itemd.add(i); 
 		
-		assertThat(i, containsString("Pack"));
+		assertEquals(i, ("Blaster"));
 		i = new Item("Small Med Pack", "Standard imperial issue medical pack with bacta injection.  "
 				+ "While not very pleasent these small bacta injections will keep you from dieing as long as you are not already dead and will stabilize the patient and are intended for self treatment.",
 				-2, 1, false);
-		Items.add(i);
+		Itemd.add(i);
+		assertEquals(i, ("Pack"));
+		
+		
 		
 		//Items = Arrays.asList<Item>();
-		
-	
-		
-	
-	
-		
-		//iCapacity = 5;
-		//Adding basic items for testing.
-		Item i = new Item("Pulse Blaster", "Standard imperial pulse blaster issueed to infantry Stormtroopers as their primary weapon.  "
-				+ "Mass produced and woefully inaccurate the empire relies on statistical battle dominance by increasing the cyclical rate which is higher than most weapons of this class.",
-				10, -1, false);
-		Items.add(i);
-		i = new Item("Small Med Pack", "Standard imperial issue medical pack with bacta injection.  "
-				+ "While not very pleasent these small bacta injections will keep you from dying as long as you are not already dead. It stabilizes the patient, and are intended for self treatment.",
-				-2, 1, false);
-		Items.add(i);
-		
+		//TO DO 
+		//Mock items to be added into asList 
+		//Confirm via an assertThat(?) that items are in list 
+		//Output the test results println to make sure not failing positive 
 		
 		
 	}
 
 	
 	@Test
-	public void testAdd(Item I)
-	{
+	public void testAdd()
+	{ 
+		
+		//Inventory invent = new Inventory();
 		//The player can pick up equipment as described in the equipment user story.
-		Items.add(I);
+		Item.add("Blaster"); 
+		assertEquals();
+		//System.out.println(x);
 	}
 	
-	
-	@Test
-	public void testRemove(Item I)
-	{
-		for(Item inv:Items)
-		{
-			if(inv.equals(I))
-			{
-				Items.remove(inv);  //Richard - I don't know if this is going to work. 
-				break;
-			}
-		}
-	}
-	
+
+
 	
 	}
 
