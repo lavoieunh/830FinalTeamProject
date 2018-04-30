@@ -25,7 +25,7 @@ public class MyGame {
 	private String sSortOrder = "";
 	private String sUserInput = "";
 	private String sCR = System.getProperty("line.separator"); //Carriage Return
-	public Map GameMap = new Map(4,4);
+	public Map GameMap = new Map(16,16);
 	
 	
 	public static void main(String[] args) {

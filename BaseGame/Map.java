@@ -30,7 +30,7 @@ public class Map {
 		{
 			for(int j = 0; j < GameMap.length; j++)
 			{
-				sMap += GameMap[i][j].toString();
+				sMap += GameMap[i][j].toString() + " ";
 			}
 			sMap += "\r\n"; //add a new line to the string.
 		}
