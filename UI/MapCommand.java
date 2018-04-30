@@ -1,12 +1,8 @@
-package BaseGame;
+package UI;
 
-import UI.Commandable;
-import UI.MyGame;
-import UI.UserInterface;
+public class MapCommand implements Commandable {
 
-public class InventoryCommand implements Commandable {
-
-	public InventoryCommand(MyGame g)
+	public MapCommand(MyGame g)
 	{
 		g.Subscribe(this);
 	}
@@ -14,21 +10,18 @@ public class InventoryCommand implements Commandable {
 	@Override
 	public void doCommand(MyGame g) {
 		
-		UserInterface.UserOutput(g.BeltAndBackPack.List());
-	
-
+		UserInterface.UserOutput(g.GameMap.getMap());
 	}
 
 	@Override
 	public boolean matchCommand(String s) {
-		
 		return s.toUpperCase().equals(getCommandText().toUpperCase()); //returns true for match and false for no match.
 	}
 
 	@Override
 	public String getCommandText() {
 		
-		return "Inventory";
+		return "Map";
 	}
-	
+
 }
