@@ -25,6 +25,7 @@ public class MyGame {
 	public Map GameMap = new Map(iMD,iMD);
 	
 	
+	
 	public static void main(String[] args) {
 		
 		MyGame mG = new MyGame();
