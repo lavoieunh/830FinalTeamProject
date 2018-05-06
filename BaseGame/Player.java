@@ -1,11 +1,11 @@
 package BaseGame; 
 
-public class player { 
+public class Player { 
 	
 	//GameStateMachine gameState;
 	
 	
-	public player (String User_Name, Integer Defense_Value, Integer Attack_Value) { 
+	public Player (String User_Name, Integer Defense_Value, Integer Attack_Value) { 
 		setsUser_Name(User_Name);
 		setDefense_Value(Defense_Value);
 		setAttack_Value(Attack_Value);
