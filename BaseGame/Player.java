@@ -1,17 +1,23 @@
 package BaseGame; 
 
-public class player { 
+public class Player { 
 	
-	//GameStateMachine gameState;
+	private int Health;
 	
-	
-	public player (String User_Name, Integer Defense_Value, Integer Attack_Value) { 
-		setsUser_Name(User_Name);
-		setDefense_Value(Defense_Value);
-		setAttack_Value(Attack_Value);
+	private Player( ) {
+		//constructor for the Player. Also sets Health to 10.
+		Health = 10;
 	}
 	
-
+	//Singleton to create single instance of a Player
+	private static Player Instance = null;
+	
+	public static Player getInstance() {
+		if(Instance == null) {
+			Instance = new Player();
+		}
+		return Instance;
+	}
 
 	private String pUser_Name = "";  
 	private Integer pDefense_Value = 0; 
@@ -39,6 +45,15 @@ public class player {
 
 	public void setDefense_Value(Integer defense_value) {
 		pDefense_Value = defense_value;
+	}
+	
+	public int changeHealth(int change) {
+		Health += change;
+		
+		return Health;
+	}
+	public int getHealth() {
+		return Health;
 	}
 	
 
