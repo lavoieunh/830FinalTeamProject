@@ -4,9 +4,17 @@ public class Player {
 	
 	private int Health;
 	
+<<<<<<< HEAD
 	private Player( ) {
 		//constructor for the Player. Also sets Health to 10.
 		Health = 10;
+=======
+	
+	public Player (String User_Name, Integer Defense_Value, Integer Attack_Value) { 
+		setsUser_Name(User_Name);
+		setDefense_Value(Defense_Value);
+		setAttack_Value(Attack_Value);
+>>>>>>> e8f92f2ef68415f7ef830cfdb7540e89380dab69
 	}
 	
 	//Singleton to create single instance of a Player

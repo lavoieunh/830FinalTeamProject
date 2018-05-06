@@ -1,8 +1,17 @@
 package BaseGame;
 
+import java.util.Random;
+
 import com.sun.javafx.geom.Point2D;
 
+import UI.UserInterface;
+
 public class Map {
+	
+	private Integer iGameMapDimention = 32;
+	private Integer iGameMapWidth = iGameMapDimention;
+	private Integer iGameMapHeight = iGameMapDimention;
+	
 	
 	public Map(int x, int y)
 	{
@@ -12,7 +21,7 @@ public class Map {
 		{
 			for(int j = 0; j < GameMap.length; j++)
 			{
-				GameMap[i][j] = ".";
+				GameMap[i][j] = MapObject();
 			}
 		}
 		
@@ -43,6 +52,48 @@ public class Map {
 		return ptLocation;
 	}
 	
+	public Integer getMapWidth()
+	{
+		return iGameMapWidth;
+	}
 	
+	public Integer getMapHeight()
+	{
+		return iGameMapHeight;
+	}
+	
+	public void setLocation(String sIcon, Integer x, Integer y)
+	{
+		GameMap[x][y] = sIcon;
+		ptLocation.setLocation(x, y);
+	}
+	
+	private int roll(int max, int min) {
+		Random r = new Random();
+		int rand = r.nextInt(max - min + 1) + min;
+		return rand;
+	}
 
+	private String MapObject()
+	{
+		String[] MapObs = 
+		{
+				"X" //Debris
+				,"T" //Tree
+				,"e" //Ewock
+				,"r" //rebel
+				,".",".",".",".",".",".",".",".",".",".",".",".","." // empty space
+				
+		};
+		
+		return MapObs[roll(MapObs.length-1, 0)];
+	}
+	
+	public Boolean Clipable(Integer x, Integer y)
+	{
+		UserInterface.UserOutput(GameMap[x][y].toString()); //debug
+		return GameMap[x][y].toString().contains(".");
+	}
+
+	
 }

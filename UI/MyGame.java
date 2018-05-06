@@ -4,28 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import BaseGame.Inventory;
-import BaseGame.InventoryCommand;
-import BaseGame.ItemDescribeCommand;
-import BaseGame.Map;
+import BaseGame.*;
 
 public class MyGame {
 
 	public List<Commandable> UserCommands = new ArrayList<Commandable>();
 	public HelpCommand HelpMe = new HelpCommand(this);
 	public QuitCommand QuitMe = new QuitCommand(this);
-	//public ListCommand ListMe = new ListCommand(this);
-	//public SortCommand SortMe = new SortCommand(this);
 	public InventoryCommand InvMe = new InventoryCommand(this);
 	public ItemDescribeCommand ItmDescMe = new ItemDescribeCommand(this);
 	public MapCommand MapMe = new MapCommand(this);
+	public MoveCommand MoveMe = new MoveCommand(this);
 	
 	public Inventory BeltAndBackPack = new Inventory();
 	private Boolean bolQuit = false;
 	private String sSortOrder = "";
 	private String sUserInput = "";
 	private String sCR = System.getProperty("line.separator"); //Carriage Return
-	public Map GameMap = new Map(16,16);
+	private Integer iMD = 32; //integer map dimension size.
+	public Map GameMap = new Map(iMD,iMD);
+	
 	
 	
 	public static void main(String[] args) {
