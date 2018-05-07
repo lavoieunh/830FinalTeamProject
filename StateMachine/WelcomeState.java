@@ -3,12 +3,17 @@ package StateMachine;
 public class WelcomeState implements GameState {
 	GameStateMachine gameState;
 	
+	
+	
 	public WelcomeState(GameStateMachine gameState) {
 		this.gameState = gameState;
+		System.out.println("Welcome State Loaded");
 	}
 	
-	//Your welcome code here
 	
+	public void hello() {
+		System.out.println("Hello World");
+	}
 	public void exploreState() {
 		
 		//use this method to move from welcome to the start of the game - explore

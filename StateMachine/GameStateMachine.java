@@ -19,7 +19,8 @@ public class GameStateMachine {
 		welcomeState = new WelcomeState(this);
 		winState = new WinState(this);
 		loseState = new LoseState(this);
-		this.gs = welcomeState;
+		System.out.println("State Machine Loaded");
+		this.gs = exploreState;
 	}
 	void goToExplore() {
 		gs.exploreState();
@@ -33,7 +34,7 @@ public class GameStateMachine {
 	void goToCombat() {
 		gs.combatState();
 	}
-	void goToWelcome() {
+	public void goToWelcome() {
 		gs.welcomeState();
 	}
 	void goToWin() {

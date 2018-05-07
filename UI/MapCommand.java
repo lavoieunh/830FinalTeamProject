@@ -11,6 +11,7 @@ public class MapCommand implements Commandable {
 	public void doCommand(MyGame g) {
 		
 		UserInterface.UserOutput(g.GameMap.getMap());
+		
 	}
 
 	@Override
