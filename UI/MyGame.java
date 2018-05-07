@@ -1,10 +1,13 @@
 package UI;
 
 import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Scanner;
 
 import BaseGame.*;
+
+
 
 public class MyGame {
 
@@ -15,6 +18,10 @@ public class MyGame {
 	public ItemDescribeCommand ItmDescMe = new ItemDescribeCommand(this);
 	public MapCommand MapMe = new MapCommand(this);
 	public MoveCommand MoveMe = new MoveCommand(this);
+	public Welcome welcome = new Welcome(this);
+	public Player player = new Player(this);
+	public StatsCommand StatsMe = new StatsCommand(this);
+	public KeyCommand KeyMe = new KeyCommand(this);
 	
 	public Inventory BeltAndBackPack = new Inventory();
 	private Boolean bolQuit = false;
@@ -29,9 +36,33 @@ public class MyGame {
 	public static void main(String[] args) {
 		
 		MyGame mG = new MyGame();
-		mG.Run();
+		//mG.Run();
+		mG.Run2();
+		
+		
 		
 	}
+	
+	public void Run2() {
+		
+		player.initialize();
+		welcome.intro();
+		Scanner inputScanner = new Scanner(System.in);
+		UserInterface.UserOutput("Press any key to continue!");
+		inputScanner.nextLine();
+		MapMe.doCommand(this);
+		this.bolQuit = false;
+		InitializeHelpText();
+		
+		ProcessUserInputCommands("HELP");		
+		while( bolQuit == false)
+		{
+			sUserInput = inputScanner.next();
+			this.ProcessUserInputCommands(sUserInput);
+				
+		}
+	}
+	
 	
 	private void InitializeHelpText()
 	{
@@ -43,7 +74,10 @@ public class MyGame {
 
 	private void Run()
 	{
-		this.bolQuit = false;
+		
+		
+		
+		 this.bolQuit = false;
 		InitializeHelpText();
 		Scanner inputScanner = new Scanner(System.in);
 
@@ -59,7 +93,8 @@ public class MyGame {
 				"How will you know where to go? What are your means of departing the forest moon? How will you communicate to remaining Imperial Forces?  If you do NOT have a means of departing the moon " + sCR
 				+ "or communicating with remaining Imperial Forces you will surely perish...\r\n" + "\r\n"
 				);
-		ProcessUserInputCommands("HELP");		
+		ProcessUserInputCommands("HELP");
+		
 		while( bolQuit == false)
 		{
 			sUserInput = inputScanner.next();
@@ -113,5 +148,5 @@ public class MyGame {
 	public String getUserInput()
 	{
 		return sUserInput;
-	}
+	} 
 }

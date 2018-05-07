@@ -4,31 +4,30 @@ import UI.Commandable;
 import UI.MyGame;
 import UI.UserInterface;
 
-public class InventoryCommand implements Commandable {
+public class StatsCommand implements Commandable {
 
-	public InventoryCommand(MyGame g)
+	public StatsCommand(MyGame g)
 	{
 		g.Subscribe(this);
 	}
 	
 	@Override
 	public void doCommand(MyGame g) {
-		
-		UserInterface.UserOutput(g.BeltAndBackPack.List());
+		UserInterface.UserOutput("HP: " + g.player.getHealth());
+		UserInterface.UserOutput("Time Remaining to Evacuatoin: " + g.player.getTime() + " parsecs");
 		g.HelpMe.doCommand(g);
-
 	}
 
 	@Override
 	public boolean matchCommand(String s) {
-		
 		return s.toUpperCase().equals(getCommandText().toUpperCase()); //returns true for match and false for no match.
+		
 	}
 
 	@Override
 	public String getCommandText() {
-		
-		return "Inventory";
+		// TODO Auto-generated method stub
+		return "stats";
 	}
-	
+
 }

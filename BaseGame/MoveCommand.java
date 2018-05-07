@@ -34,12 +34,14 @@ public class MoveCommand implements Commandable {
 				if(x > 0 && g.GameMap.Clipable(x-1,y))
 				{
 					x--;
+					
 				}
 				break;
 			case "S":
 				if(x < g.GameMap.getMapHeight()-1 && g.GameMap.Clipable(x+1,y))
 				{
 					x++;
+					
 				}
 				break;
 			case "E":
@@ -47,12 +49,14 @@ public class MoveCommand implements Commandable {
 				if(y < g.GameMap.getMapWidth()-1 && g.GameMap.Clipable(x,y+1))
 				{
 					y++;
+					
 				}
 				break;
 			case "W":
 				if(y > 0 && g.GameMap.Clipable(x,y-1))
 				{
 					y--;
+					
 				}
 				break;	
 			default:
@@ -60,7 +64,12 @@ public class MoveCommand implements Commandable {
 				
 		}
 		g.GameMap.setLocation("@", x, y);
+		
 		g.MapMe.doCommand(g);
+		
+		g.player.countDown(1);
+		
+		g.HelpMe.doCommand(g);
 
 	}
 
