@@ -44,7 +44,10 @@ public class MyGame {
 	{
 		for(Commandable c:UserCommands)
 		{
-			HelpMe.Subscribe(c.getCommandText());
+			if(!c.equals(BeerMe))
+			{
+				HelpMe.Subscribe(c.getCommandText());
+			}
 		}
 	}
 
@@ -81,7 +84,7 @@ public class MyGame {
 			this.ProcessUserInputCommands(sUserInput);
 				
 		}
-		UserInterface.UserOutput("The End!");
+		
 		inputScanner.close();
 
 	}
@@ -97,7 +100,7 @@ public class MyGame {
 				this.bolQuit = false;
 				InitializeHelpText();
 				
-				ProcessUserInputCommands("HELP");		
+				HelpMe.doCommand(this);		
 				while( bolQuit == false)
 				{
 					sUserInput = inputScanner.next();
@@ -124,7 +127,10 @@ public class MyGame {
 			{
 				UserInterface.UserOutput("Command not recognized");
 			}
-		
+		if(!QuitMe.matchCommand(UserInput))
+		{
+			HelpMe.doCommand(this);
+		}
 	}
 
 	protected void QuitProgram()
