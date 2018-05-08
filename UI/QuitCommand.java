@@ -12,7 +12,7 @@ implements Commandable
 	@Override
 	public void doCommand(MyGame g) {
 		g.QuitProgram();
-		//UserInterface.UserOutput(CommandMessage());
+		UserInterface.UserOutput("Good Bye!");
 	}
 	
 	@Override
@@ -24,7 +24,7 @@ implements Commandable
 
 	@Override
 	public String getCommandText() {
-		// TODO Auto-generated method stub
+		
 		return "Quit";
 	}
 

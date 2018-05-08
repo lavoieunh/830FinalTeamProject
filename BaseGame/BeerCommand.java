@@ -13,7 +13,32 @@ public class BeerCommand implements Commandable {
 	
 	@Override
 	public void doCommand(MyGame g) {
-		UserInterface.UserOutput("you are now beered!");
+		String s = "";
+		
+		s = "                              .sssssssss.\r\n" + 
+				"                        .sssssssssssssssssss\r\n" + 
+				"                      sssssssssssssssssssssssss\r\n" + 
+				"                     ssssssssssssssssssssssssssss\r\n" + 
+				"                      @@sssssssssssssssssssssss@ss\r\n" + 
+				"                      |s@@@@sssssssssssssss@@@@s|s\r\n" + 
+				"               _______|sssss@@@@@sssss@@@@@sssss|s\r\n" + 
+				"             /         sssssssss@sssss@sssssssss|s\r\n" + 
+				"            /  .------+.ssssssss@sssss@ssssssss.|\r\n" + 
+				"           /  /       |...sssssss@sss@sssssss...|\r\n" + 
+				"          |  |        |.......sss@sss@ssss......|\r\n" + 
+				"          |  |        |..........s@ss@sss.......|\r\n" + 
+				"          |  |        |...........@ss@..........|\r\n" + 
+				"           \\  \\       |............ss@..........|\r\n" + 
+				"            \\  '------+...........ss@...........|\r\n" + 
+				"             \\________ .........................|\r\n" + 
+				"                      |.........................|\r\n" + 
+				"                     /...........................\\\r\n" + 
+				"                    |.............................|\r\n" + 
+				"                       |.......................|\r\n" + 
+				"                           |...............|\r\n " +
+				"							you are now beered!\r\n";
+		
+		UserInterface.UserOutput(s);
 
 	}
 
