@@ -29,7 +29,7 @@ public class MyGame {
 	private String sCR = System.getProperty("line.separator"); //Carriage Return
 	private Integer iMD = 32; //integer map dimension size.
 	public Map GameMap = new Map(iMD,iMD);
-	private GameStateMachine GSM;
+
 	
 	
 	public static void main(String[] args) {
