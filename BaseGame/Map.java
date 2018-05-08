@@ -80,8 +80,8 @@ public class Map {
 		{
 				"X" //Debris
 				,"T" //Tree
-				,"e" //Ewock
-				,"r" //rebel
+				,"o" //Ewock or //rebel
+				//,"r" 
 				,".",".",".",".",".",".",".",".",".",".",".",".","." // empty space
 				
 		};
