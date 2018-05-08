@@ -39,7 +39,6 @@ public class ItemDescribeCommand implements Commandable {
 			UserInterface.UserOutput("Error: Item index not found! " + "Invaild entry!  Use: 'Describe#'");
 			UserInterface.UserOutput(g.HelpMe.getCommands());
 		}
-		g.HelpMe.doCommand(g);
 		
 	}
 
