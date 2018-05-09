@@ -97,6 +97,7 @@ public class MyGame {
 				UserInterface.UserOutput("Press any key to continue!");
 				inputScanner.nextLine();
 				MapMe.doCommand(this);
+				KeyMe.doCommand(this);
 				this.bolQuit = false;
 				InitializeHelpText();
 				

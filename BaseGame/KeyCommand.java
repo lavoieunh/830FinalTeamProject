@@ -18,10 +18,11 @@ public class KeyCommand implements Commandable {
 				"Key: " + "\r\n" +" @ - Player" + "\r\n"
 				+"T - Tree" + "\r\n"
 				+"X - Debris" + "\r\n"
-				+"r - Rebel" + "\r\n"
-				+"e - Ewok" + "\r\n"
+				//+"r - Rebel" + "\r\n"
+				//+"e - Ewok" + "\r\n"
+				+"o - NPC \r\n"
 				);
-		g.HelpMe.doCommand(g);
+		//g.HelpMe.doCommand(g);
 
 	}
 

@@ -19,12 +19,13 @@ public class Welcome {
 				+ " to depart this infested dirtball called a forest moon. \r\n \r\n" + 
 				"How will you know where to go? What are your means of departing the forest moon? How will you communicate to remaining Imperial Forces?  If you do NOT have a means of departing the moon " + sCR
 				+ "or communicating with remaining Imperial Forces you will surely perish...\r\n" + "\r\n"
-				+ "\r\n"
-				+"Key: " + "\r\n" +" @ - Player" + "\r\n"
-				+"T - Tree" + "\r\n"
-				+"X - Debris" + "\r\n"
-				+"r - Rebel" + "\r\n"
-				+"e - Ewok" + "\r\n"
+				//+ "\r\n"
+				//+"Key: " + "\r\n" +" @ - Player" + "\r\n"
+				//+"T - Tree" + "\r\n"
+				//+"X - Debris" + "\r\n"
+				//+"r - Rebel" + "\r\n"
+				//+"e - Ewok" + "\r\n"
 				);
+		
 	}
 }

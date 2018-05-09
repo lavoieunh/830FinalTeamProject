@@ -7,16 +7,29 @@ public abstract class UserInterface {
 		/*
 		Integer ConsoleWidth = 166;
 		String sCR = "\r\n";
-		Integer iIndex = -1;
+		Integer iStartIndex = 1;
+		Integer iEndIndex = ConsoleWidth;
 		
-		while(Output.length() - iIndex > ConsoleWidth)
+		String sFormatOut = "";
+		Boolean bEndofString = false;
+		
+		while(!bEndofString & Output.length()>ConsoleWidth)
 		{
-			iIndex = Output.indexOf(" ", ConsoleWidth - 10);
-			Output.su
+			iEndIndex = Output.indexOf(" ", iEndIndex); //Find the next space in the string.
+			sFormatOut = Output.substring(iStartIndex, iEndIndex) + sCR; //Add it to the formmatted string and append a carrage return
+			iStartIndex = iEndIndex; // Advance the start index to the end of the previous interation
+			
+			iEndIndex = iEndIndex + ConsoleWidth;
+			if(iEndIndex > Output.length())
+			{
+				iEndIndex = Output.length();
+			}	bEndofString = true;
 			
 		}
 		*/
+		
 		System.out.println(Output);
+		
 		
 	}
 	
