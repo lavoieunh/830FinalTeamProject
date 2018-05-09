@@ -100,7 +100,7 @@ public class Map {
 		return GameMap[x][y].toString();
 	}
 	
-	public Point2D getPVP(Point2D Point, String sMatch)
+	public Point2D getPVE(Point2D Point, String sMatch)
 	{
 		//Look at all the map locations around the given point and return the first point with a match of the given icon.
 		

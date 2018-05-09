@@ -65,10 +65,10 @@ public class MoveCommand implements Commandable {
 		//UserInterface.UserOutput(String.valueOf(g.GameMap.getPVP(g.GameMap.getLocation(), "o").distance(-1,  -1))); //debug
 		//UserInterface.UserOutput((g.GameMap.getPVP(g.GameMap.getLocation(), "o").toString()));	
 		
-		Point2D pt = g.GameMap.getPVP(g.GameMap.getLocation(), "o");
+		Point2D pt = g.GameMap.getPVE(g.GameMap.getLocation(), "o");
 		
-		UserInterface.UserOutput(pt.x + " " +pt.y);//debug
-		UserInterface.UserOutput(String.valueOf(pt.distance(-1, -1))); //debug
+		//UserInterface.UserOutput(pt.x + " " +pt.y);//debug
+		//UserInterface.UserOutput(String.valueOf(pt.distance(-1, -1))); //debug
 		
 		if(pt.distance(-1,-1)==0)
 		{
