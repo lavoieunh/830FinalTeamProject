@@ -18,8 +18,7 @@ public class MoveCommand implements Commandable {
 	@Override
 	public void doCommand(MyGame g) {
 		
-		//to do...
-		UserInterface.UserOutput(g.getUserInput().toUpperCase());
+		//UserInterface.UserOutput(g.getUserInput().toUpperCase());  //Debug
 		
 		Point2D p = g.GameMap.getLocation();
 		Integer x = (int)(p.x);
@@ -43,7 +42,7 @@ public class MoveCommand implements Commandable {
 				}
 				break;
 			case "E":
-				UserInterface.UserOutput(g.GameMap.Clipable(x, y+1).toString());
+				//UserInterface.UserOutput(g.GameMap.Clipable(x, y+1).toString()); //Debug
 				if(y < g.GameMap.getMapWidth()-1 && g.GameMap.Clipable(x,y+1))
 				{
 					y++;
@@ -62,6 +61,27 @@ public class MoveCommand implements Commandable {
 		g.GameMap.setLocation("@", x, y);
 		g.MapMe.doCommand(g);
 		g.player.countDown(1);
+		
+		//UserInterface.UserOutput(String.valueOf(g.GameMap.getPVP(g.GameMap.getLocation(), "o").distance(-1,  -1))); //debug
+		//UserInterface.UserOutput((g.GameMap.getPVP(g.GameMap.getLocation(), "o").toString()));	
+		
+		Point2D pt = g.GameMap.getPVP(g.GameMap.getLocation(), "o");
+		
+		UserInterface.UserOutput(pt.x + " " +pt.y);//debug
+		UserInterface.UserOutput(String.valueOf(pt.distance(-1, -1))); //debug
+		
+		if(pt.distance(-1,-1)==0)
+		{
+			//UserInterface.UserOutput("No PVE"); //debug
+			
+		}
+		else
+		{
+			UserInterface.UserOutput("PVE"); //debug
+			//put call to pve here...
+			g.GameMap.setLocation(".", (int)pt.x, (int)pt.y); // needs to have a true / false return update to this if pve success.
+		}
+			
 
 	}
 

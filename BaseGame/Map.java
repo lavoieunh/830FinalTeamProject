@@ -91,8 +91,91 @@ public class Map {
 	
 	public Boolean Clipable(Integer x, Integer y)
 	{
-		UserInterface.UserOutput(GameMap[x][y].toString()); //debug
+		//UserInterface.UserOutput(GameMap[x][y].toString()); //debug
 		return GameMap[x][y].toString().contains(".");
+	}
+	
+	private String getValueIn(Integer x, Integer y) // returns the icon value of the specified map location.
+	{
+		return GameMap[x][y].toString();
+	}
+	
+	public Point2D getPVP(Point2D Point, String sMatch)
+	{
+		//Look at all the map locations around the given point and return the first point with a match of the given icon.
+		
+		Integer x = -1;
+		Integer y = -1;
+		String sIcon = "";
+		Point2D p = new Point2D();
+		p.x = x; 
+		p.y = y;
+	
+		x =  (int)this.getLocation().x;
+		y = (int)this.getLocation().y;
+		
+		for(int i = 0; i<=7; i++)
+		{			
+			switch(i)
+			{
+				case 0:
+					if(y>0)
+					{
+						sIcon = getValueIn(x,y-1);//look 9 O'clock
+					}
+					break;
+				case 1:
+					if(y>0 && x>0)
+					{
+						sIcon = getValueIn(x-1,y-1);//look 10:30 O'clock
+					}
+					break;
+				case 2:
+					if(x>0)
+					{
+						sIcon = getValueIn(x-1,y);//look 12 O'clock
+					}
+					break;	
+				case 3:
+					if(x>0 && y<getMapWidth())
+					{
+						sIcon = getValueIn(x-1,y+1);//look 1:30 O'clock
+					}
+					break;
+				case 4:
+					if(y<getMapWidth())
+					sIcon = getValueIn(x,y+1);//look 3 O'clock
+					break;
+				case 5:
+					if(x<getMapHeight() && x<getMapWidth())
+					{
+						sIcon = getValueIn(x+1,y+1);//look 4:30 O'clock
+					}
+					break;
+				case 6:
+					if(x<getMapHeight())
+					{
+						sIcon = getValueIn(x+1,y);//look 6 O'clock
+					}
+					break;
+				case 7:
+					if(y>0 && x<getMapHeight())
+					{
+						sIcon = getValueIn(x+1,y-1);//look 7:30 O'clock
+					}
+					break;
+				default:
+					return p;
+					
+			}
+			if(sIcon.compareTo(sMatch) == 0)
+			{
+				p.setLocation((float)x, (float)y);
+				break;
+			}
+			
+		}
+		return p;
 	}
 
 	
