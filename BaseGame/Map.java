@@ -92,7 +92,14 @@ public class Map {
 	public Boolean Clipable(Integer x, Integer y)
 	{
 		//UserInterface.UserOutput(GameMap[x][y].toString()); //debug
-		return GameMap[x][y].toString().contains(".");
+		boolean bReturn = false;
+		//Make sure the point is within the array range.
+		//if(x>0 && x< iGameMapHeight-1 && y>0 && y< iGameMapWidth-1)
+		//{
+			bReturn = GameMap[x][y].toString().contains("."); 
+		//}
+		
+		return bReturn;
 	}
 	
 	private String getValueIn(Integer x, Integer y) // returns the icon value of the specified map location.
@@ -137,29 +144,29 @@ public class Map {
 					}
 					break;	
 				case 3:
-					if(x>0 && y<getMapWidth())
+					if(x>0 && y<getMapWidth()-2)
 					{
 						sIcon = getValueIn(x-1,y+1);//look 1:30 O'clock
 					}
 					break;
 				case 4:
-					if(y<getMapWidth())
+					if(y<getMapWidth()-2)
 					sIcon = getValueIn(x,y+1);//look 3 O'clock
 					break;
 				case 5:
-					if(x<getMapHeight() && x<getMapWidth())
+					if(x<getMapHeight()-2 && y<getMapWidth()-2)
 					{
 						sIcon = getValueIn(x+1,y+1);//look 4:30 O'clock
 					}
 					break;
 				case 6:
-					if(x<getMapHeight())
+					if(x<getMapHeight()-2)
 					{
 						sIcon = getValueIn(x+1,y);//look 6 O'clock
 					}
 					break;
 				case 7:
-					if(y>0 && x<getMapHeight())
+					if(y>0 && x<getMapHeight()-2)
 					{
 						sIcon = getValueIn(x+1,y-1);//look 7:30 O'clock
 					}
@@ -168,7 +175,7 @@ public class Map {
 					return p;
 					
 			}
-			if(sIcon.compareTo(sMatch) == 0)
+			if(sIcon.compareTo(sMatch) == 0) //finds the difference
 			{
 				p.setLocation((float)x, (float)y);
 				break;

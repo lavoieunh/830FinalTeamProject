@@ -8,21 +8,35 @@ public class KeyCommand implements Commandable {
 
 	public KeyCommand(MyGame g)
 	{
+		
 		g.Subscribe(this);
 	}
 	
+	Boolean bOn = true;
 	
 	@Override
 	public void doCommand(MyGame g) {
-		UserInterface.UserOutput(
-				"Key: " + "\r\n" +" @ - Player" + "\r\n"
-				+"T - Tree" + "\r\n"
+		String sPlayerInfo = "(Starts in top left corner)";
+		String sKeyText = "";
+				
+				if(bOn)
+				{
+					sKeyText = "Key: " + "\r\n" +"@ - Player " + sPlayerInfo + "\r\n";
+				} 
+				else 
+				{
+					sKeyText = "Key: " + "\r\n" +"@ - Player " + "\r\n";
+				}
+				sKeyText = sKeyText + "T - Tree" + "\r\n"
 				+"X - Debris" + "\r\n"
 				//+"r - Rebel" + "\r\n"
 				//+"e - Ewok" + "\r\n"
-				+"o - NPC \r\n"
-				);
+				+"o - NPC \r\n";
+				
+		
+		UserInterface.UserOutput(sKeyText);
 		//g.HelpMe.doCommand(g);
+		bOn = false;
 
 	}
 

@@ -101,7 +101,7 @@ public class MyGame {
 				this.bolQuit = false;
 				InitializeHelpText();
 				
-				HelpMe.doCommand(this);		
+				HelpMe.doCommand(this);	
 				while( bolQuit == false)
 				{
 					sUserInput = inputScanner.next();
