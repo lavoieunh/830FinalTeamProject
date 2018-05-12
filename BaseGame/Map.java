@@ -25,7 +25,8 @@ public class Map {
 			}
 		}
 		
-		GameMap[(int) ptLocation.x][(int) ptLocation.y] = "@";
+		//GameMap[(int) ptLocation.x][(int) ptLocation.y] = "@";
+		setLocation("@",(int) ptLocation.x, (int) ptLocation.y);
 		
 	}
 
@@ -34,6 +35,12 @@ public class Map {
 	
 	public String getMap()
 	{
+		
+		if(roll(1,0) == 1) //randomly change the location of the NPC's on the map.
+		{
+			moveNPC();
+		}
+		
 		String sMap = "";
 		for(int i = 0; i < GameMap.length; i++)
 		{
@@ -65,7 +72,10 @@ public class Map {
 	public void setLocation(String sIcon, Integer x, Integer y)
 	{
 		GameMap[x][y] = sIcon;
-		ptLocation.setLocation(x, y);
+		if(sIcon.equals("@")) //player track location.
+		{
+		  ptLocation.setLocation(x, y);
+		}
 	}
 	
 	private int roll(int max, int min) {
@@ -185,5 +195,84 @@ public class Map {
 		return p;
 	}
 
+	private void moveNPC()
+	{
+		String s = "";
+		Integer iDirection = -1;
+		String[] sDirection = new String[] {"N","S","E","W"};
+		Point2D p = new Point2D();
+		
+		
+		for(int i = 0; i < GameMap.length; i++)
+		{
+			for(int j = 0; j < GameMap.length; j++)
+			{
+				//s += GameMap[i][j].toString() + " ";
+				s = GameMap[i][j].toString();
+				if(s.equals("o"))
+				{
+					iDirection =  roll(3,0);
+					p.x = i;
+					p.y = j;
+					p = moveObject(p, sDirection[iDirection]);	
+					setLocation(s, (int)p.x, (int)p.y);
+							
+						
+				}
+			}
+			
+		}
+	}
+	
+	public Point2D moveObject(Point2D currentLocation, String Direction)
+	{
+		
+		Point2D pNewLoc = new Point2D();
+		
+		Point2D p = currentLocation;
+		Integer x = (int)(p.x);
+		Integer y = (int)p.y;
+		
+		setLocation(".", x, y);
+		
+		
+		switch (Direction.toUpperCase())
+		{
+			case "N":
+				if(x > 0 && Clipable(x-1,y))
+				{
+					x--;
+				}
+				break;
+			case "S":
+				if(x < getMapHeight()-1 && Clipable(x+1,y))
+				{
+					x++;
+				}
+				break;
+			case "E":
+				
+				if(y < getMapWidth()-1 && Clipable(x,y+1))
+				{
+					y++;
+				}
+				break;
+			case "W":
+				if(y > 0 && Clipable(x,y-1))
+				{
+					y--;
+				}
+				break;	
+			default:
+				break;
+				
+		}
+		
+		pNewLoc.x = x;
+		pNewLoc.y = y;
+		
+		
+		return pNewLoc;
+	}
 	
 }
