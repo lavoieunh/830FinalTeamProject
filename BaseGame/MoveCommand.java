@@ -24,9 +24,11 @@ public class MoveCommand implements Commandable {
 		Integer x = (int)(p.x);
 		Integer y = (int)p.y;
 		
-		g.GameMap.setLocation(".", x, y);
 		
 		
+		//g.GameMap.setLocation(".", x, y);
+		
+		/*
 		switch (g.getUserInput().toUpperCase())
 		{
 			case "N":
@@ -58,7 +60,9 @@ public class MoveCommand implements Commandable {
 				break;
 				
 		}
-		g.GameMap.setLocation("@", x, y);
+		*/
+		p = g.GameMap.moveObject(p, g.getUserInput().toUpperCase()); //Get the new point.
+		g.GameMap.setLocation("@", (int)p.x, (int)p.y);
 		g.MapMe.doCommand(g);
 		g.player.countDown(1);
 		
@@ -77,7 +81,7 @@ public class MoveCommand implements Commandable {
 		}
 		else
 		{
-			UserInterface.UserOutput("PVE"); //debug
+			//UserInterface.UserOutput("PVE"); //debug
 			//put call to pve here...
 			g.GameMap.setLocation(".", (int)pt.x, (int)pt.y); // needs to have a true / false return update to this if pve success.
 		}
