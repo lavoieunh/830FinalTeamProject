@@ -24,10 +24,10 @@ public class enemiesfight {
 			dice diceSet = new dice();
 			int roll = diceSet.roll(3, 1);
 			if (roll==1) {
-				return Ewok;
+				return;
 			}
 			if (roll==2) {
-				return Rebels;
+				return;
 			}
 			
 		}
