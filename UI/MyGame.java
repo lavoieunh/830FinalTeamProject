@@ -21,6 +21,8 @@ public class MyGame {
 	public KeyCommand KeyMe = new KeyCommand(this);
 	public RunCommand RunMe = new RunCommand(this);
 	public BeerCommand BeerMe = new BeerCommand(this);
+	public RestCommand Rest = new RestCommand(this);
+
 	
 	public Inventory BeltAndBackPack = new Inventory();
 	private Boolean bolQuit = false;
