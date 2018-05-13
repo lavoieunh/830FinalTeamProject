@@ -13,8 +13,8 @@ public class StatsCommand implements Commandable {
 	
 	@Override
 	public void doCommand(MyGame g) {
-		UserInterface.UserOutput("HP: " + g.player.getHealth());
-		UserInterface.UserOutput("Time Remaining to Evacuatoin: " + g.player.getTime() + " parsecs");
+		UserInterface.UserOutput("HP: " + g.player.getHealth(), true);
+		UserInterface.UserOutput("Time Remaining to Evacuatoin: " + g.player.getTime() + " parsecs", true);
 		g.HelpMe.doCommand(g);
 	}
 

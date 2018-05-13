@@ -13,7 +13,7 @@ public class RunCommand implements Commandable {
 	
 	@Override
 	public void doCommand(MyGame g) {
-		UserInterface.UserOutput("You attempt to run away...");
+		UserInterface.UserOutput("You attempt to run away...", true);
 		//Random True False  Create a class in the that returns the true/false or a roll value
 		String sResult = "";
 		if(true)
@@ -26,7 +26,7 @@ public class RunCommand implements Commandable {
 			sResult = "..you have failed to run away.";
 			
 		}
-		UserInterface.UserOutput(sResult);
+		UserInterface.UserOutput(sResult, true);
 		
 		g.Unsubscribe(g.BeerMe);
 		

@@ -15,7 +15,7 @@ public class HelpCommand implements Commandable{
 	@Override
 	public void doCommand(MyGame g) {
 		
-		UserInterface.UserOutput(getCommands()); 
+		UserInterface.UserOutput(getCommands(), false); 
 	}
 
 	@Override

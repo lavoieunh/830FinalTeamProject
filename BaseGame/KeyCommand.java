@@ -34,7 +34,7 @@ public class KeyCommand implements Commandable {
 				+"o - NPC \r\n";
 				
 		
-		UserInterface.UserOutput(sKeyText);
+		UserInterface.UserOutput(sKeyText, true);
 		//g.HelpMe.doCommand(g);
 		bOn = false;
 

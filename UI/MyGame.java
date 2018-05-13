@@ -21,8 +21,6 @@ public class MyGame {
 	public KeyCommand KeyMe = new KeyCommand(this);
 	public RunCommand RunMe = new RunCommand(this);
 	public BeerCommand BeerMe = new BeerCommand(this);
-	public RestCommand Rest = new RestCommand(this);
-
 	
 	public Inventory BeltAndBackPack = new Inventory();
 	private Boolean bolQuit = false;
@@ -62,7 +60,7 @@ public class MyGame {
 		
 		
 
-		UserInterface.UserOutput("Welcome!  You are now playing Escape From Endor!" + sCR + sCR);
+		UserInterface.UserOutput("Welcome!  You are now playing Escape From Endor!" + sCR + sCR, true);
 
 		UserInterface.UserOutput(sCR + "You are the AT-ST driver pulled, by Chewbacca, from the AT-ST and commandeered by Chewbacca and two Ewoks and you find yourself lying on the floor of the forest moon" + sCR 
 				+ " of Endor not far from the shield generator command bunker. You are injured to a certain degree from your fall have been overlooked by the puny band of filthy rebel forces and Ewoks.  " + sCR 
@@ -73,7 +71,7 @@ public class MyGame {
 				+ " to depart this infested dirtball called a forest moon. \r\n \r\n" + 
 				"How will you know where to go? What are your means of departing the forest moon? How will you communicate to remaining Imperial Forces?  If you do NOT have a means of departing the moon " + sCR
 				+ "or communicating with remaining Imperial Forces you will surely perish...\r\n" + "\r\n"
-				);
+				, true);
 		
 		
 		ProcessUserInputCommands("HELP");
@@ -96,7 +94,7 @@ public class MyGame {
 				player.initialize();
 				welcome.intro();
 				Scanner inputScanner = new Scanner(System.in);
-				UserInterface.UserOutput("Press any key to continue!");
+				UserInterface.UserOutput("Press any key to continue!", true);
 				inputScanner.nextLine();
 				MapMe.doCommand(this);
 				KeyMe.doCommand(this);
@@ -128,7 +126,7 @@ public class MyGame {
 		
 		if(bolCommandExecuted == false)
 			{
-				UserInterface.UserOutput("Command not recognized");
+				UserInterface.UserOutput("Command not recognized", true);
 			}
 		if(!QuitMe.matchCommand(UserInput))
 		{

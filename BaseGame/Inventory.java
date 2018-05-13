@@ -139,7 +139,7 @@ public class Inventory {
 		
 		Output = "Inventory:" + System.getProperty("line.separator");
 		Output += "Commands: List, Describe, Equip, ";
-		UserInterface.UserOutput(Output);
+		UserInterface.UserOutput(Output, false);
 	}
 
 	public Item getItem(Integer i)
