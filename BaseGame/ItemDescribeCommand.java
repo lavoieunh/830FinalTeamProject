@@ -32,12 +32,12 @@ public class ItemDescribeCommand implements Commandable {
 		{
 			UserInterface.UserOutput("Name: " + g.BeltAndBackPack.getItem(i).getName() + "\r\n" 
 										+"Description: " + g.BeltAndBackPack.getItem(i).getDescription() 
-						);
+						, true);
 		}
 		else
 		{
-			UserInterface.UserOutput("Error: Item index not found! " + "Invaild entry!  Use: 'Describe#'");
-			UserInterface.UserOutput(g.HelpMe.getCommands());
+			UserInterface.UserOutput("Error: Item index not found! " + "Invaild entry!  Use: 'Describe#'",true);
+			UserInterface.UserOutput(g.HelpMe.getCommands(),true);
 		}
 		
 	}

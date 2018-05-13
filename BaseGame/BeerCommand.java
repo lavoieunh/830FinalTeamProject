@@ -38,7 +38,7 @@ public class BeerCommand implements Commandable {
 				"                           |...............|\r\n " +
 				"							you are now beered!\r\n";
 		
-		UserInterface.UserOutput(s);
+		UserInterface.UserOutput(s, false);
 
 	}
 

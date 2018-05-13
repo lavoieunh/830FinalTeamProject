@@ -14,7 +14,7 @@ public class InventoryCommand implements Commandable {
 	@Override
 	public void doCommand(MyGame g) {
 		
-		UserInterface.UserOutput(g.BeltAndBackPack.List());
+		UserInterface.UserOutput(g.BeltAndBackPack.List(), true);
 	
 
 	}
