@@ -81,7 +81,7 @@ public class Player {
 		setAC(16);
 		setAttackBonus(5);
 		setDamage(5);
-		setCurrentHP(20);
+		setCurrentHP(19);
 	}
 	
 	public void winGame() {
