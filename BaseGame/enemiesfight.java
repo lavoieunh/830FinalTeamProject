@@ -1,5 +1,6 @@
 package BaseGame;
 
+
 public class enemiesfight {
 	
 		enemies Ewok = new enemies();
@@ -17,18 +18,23 @@ public class enemiesfight {
 			Rebels.attackBonus = 4;
 			Rebels.damage = 1;
 			Rebels.hp = 6;
-			Rebels.name = "Rebels";
+			Rebels.name = "Rebel";
 		}
 
 		public enemies randMonster() {
 			dice diceSet = new dice();
-			int roll = diceSet.roll(3, 1);
+			enemies enemy = new enemies();
+			int roll = diceSet.roll(2, 1);
+			System.out.println("" + roll);
 			if (roll==1) {
-				return;
+				enemy = Ewok;
+				setEwoks();
 			}
 			if (roll==2) {
-				return;
+				enemy = Rebels;
+				setRebels();
 			}
+			return enemy;
 			
 		}
 	}
