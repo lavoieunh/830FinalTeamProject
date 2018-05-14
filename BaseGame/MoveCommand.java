@@ -84,6 +84,7 @@ public class MoveCommand implements Commandable {
 			//UserInterface.UserOutput("PVE"); //debug
 			g.FightMeBro.battle(g.player, g.BaddyMe.randMonster());
 			g.GameMap.setLocation(".", (int)pt.x, (int)pt.y); // needs to have a true / false return update to this if pve success.
+			g.MapMe.doCommand(g);
 		}
 			
 

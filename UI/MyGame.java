@@ -24,6 +24,7 @@ public class MyGame {
 	public RestCommand Rest = new RestCommand(this);
 	public Combat FightMeBro = new Combat();
 	public enemiesfight BaddyMe = new enemiesfight();
+	public UseMedPackCommand MedMe = new UseMedPackCommand(this);
 	
 	public Inventory BeltAndBackPack = new Inventory();
 	private Boolean bolQuit = false;

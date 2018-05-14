@@ -124,7 +124,10 @@ public class Map {
 		Integer x = -1;
 		Integer y = -1;
 		String sIcon = "";
+		
 		Point2D p = new Point2D();
+		Point2D pE = new Point2D(); // enemy
+		
 		p.x = x; 
 		p.y = y;
 	
@@ -139,60 +142,75 @@ public class Map {
 					if(y>0)
 					{
 						sIcon = getValueIn(x,y-1);//look 9 O'clock
+						pE.setLocation(x,y-1);
 					}
 					break;
 				case 1:
 					if(y>0 && x>0)
 					{
 						sIcon = getValueIn(x-1,y-1);//look 10:30 O'clock
+						pE.setLocation(x-1,y-1);
 					}
 					break;
 				case 2:
 					if(x>0)
 					{
 						sIcon = getValueIn(x-1,y);//look 12 O'clock
+						pE.setLocation(x-1,y);
 					}
 					break;	
 				case 3:
 					if(x>0 && y<getMapWidth()-2)
 					{
 						sIcon = getValueIn(x-1,y+1);//look 1:30 O'clock
+						pE.setLocation(x-1,y+1);
 					}
 					break;
 				case 4:
 					if(y<getMapWidth()-2)
-					sIcon = getValueIn(x,y+1);//look 3 O'clock
+					{
+						sIcon = getValueIn(x,y+1);//look 3 O'clock
+						pE.setLocation(x,y+1);
+					}
 					break;
 				case 5:
 					if(x<getMapHeight()-2 && y<getMapWidth()-2)
 					{
 						sIcon = getValueIn(x+1,y+1);//look 4:30 O'clock
+						pE.setLocation(x+1,y+1);
 					}
 					break;
 				case 6:
 					if(x<getMapHeight()-2)
 					{
 						sIcon = getValueIn(x+1,y);//look 6 O'clock
+						pE.setLocation(x+1,y);
 					}
 					break;
 				case 7:
 					if(y>0 && x<getMapHeight()-2)
 					{
 						sIcon = getValueIn(x+1,y-1);//look 7:30 O'clock
+						pE.setLocation(x+1,y-1);
 					}
 					break;
 				default:
+					pE.setLocation(-1,-1);
 					return p;
 					
 			}
 			if(sIcon.compareTo(sMatch) == 0) //finds the difference
 			{
-				p.setLocation((float)x, (float)y);
+				//p.setLocation((float)x, (float)y);
 				break;
+			}
+			else 
+			{
+				pE.setLocation(-1,-1);
 			}
 			
 		}
-		return p;
+		return pE;
 	}
 
 	private void moveNPC()
