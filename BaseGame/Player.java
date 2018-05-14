@@ -11,7 +11,23 @@ public class Player {
 	}
 	
 	int hp;
+	int currentHp;
 	int timer;
+	int ac;
+	int attackBonus;
+	int damage;
+	
+	public int getAC() {
+		return ac;
+	}
+	
+	public void setAttackBonus(int atk) {
+		attackBonus = atk;
+	}
+	
+	public void setDamage(int dmg) {
+		damage = dmg;
+	}
 	
 	public void setTimer(int time) {
 		timer = time;
@@ -35,6 +51,17 @@ public class Player {
 	public void setHP(int HP) {
 		hp = HP;
 	}
+	public void setCurrentHP(int HP) {
+		currentHp = HP;
+	}
+	
+	public void setAC(int AC) {
+		ac = AC;
+	}
+	
+	public void setTotalHP(int HP) {
+		currentHp = HP;
+	}
 	
 	public void changeHealth(int inc) {
 		hp = hp + inc;
@@ -44,9 +71,17 @@ public class Player {
 		return hp;
 	}
 	
+	public int getTotalHealth() {
+		return currentHp;
+	}
+	
 	public void initialize() {
 		setHP(20);
 		setTimer(1000);
+		setAC(16);
+		setAttackBonus(5);
+		setDamage(5);
+		setCurrentHP(20);
 	}
 	
 	public void winGame() {

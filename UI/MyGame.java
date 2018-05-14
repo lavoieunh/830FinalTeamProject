@@ -22,6 +22,8 @@ public class MyGame {
 	public RunCommand RunMe = new RunCommand(this);
 	public BeerCommand BeerMe = new BeerCommand(this);
 	public RestCommand Rest = new RestCommand(this);
+	public Combat FightMeBro = new Combat();
+	public enemiesfight BaddyMe = new enemiesfight();
 	
 	public Inventory BeltAndBackPack = new Inventory();
 	private Boolean bolQuit = false;
