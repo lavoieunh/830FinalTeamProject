@@ -19,7 +19,7 @@ public class MyGame {
 	public Player player = new Player(this);
 	public StatsCommand StatsMe = new StatsCommand(this);
 	public KeyCommand KeyMe = new KeyCommand(this);
-	public RunCommand RunMe = new RunCommand(this);
+	//public RunCommand RunMe = new RunCommand(this);
 	public BeerCommand BeerMe = new BeerCommand(this);
 	public RestCommand Rest = new RestCommand(this);
 	public Combat FightMeBro = new Combat();
