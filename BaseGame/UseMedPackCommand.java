@@ -16,6 +16,7 @@ public class UseMedPackCommand implements Commandable {
 		
 		m.UseItem(g.player);
 		
+		
 	}
 
 	@Override

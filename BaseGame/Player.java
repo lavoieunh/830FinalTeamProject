@@ -16,6 +16,7 @@ public class Player {
 	int ac;
 	int attackBonus;
 	int damage;
+	int killCount;
 	
 	public int getAC() {
 		return ac;
@@ -44,7 +45,7 @@ public class Player {
 	
 	public void checkTime() {
 		if (timer <= 0) {
-			//Code executes to win the game
+			winGame();
 		}
 	}
 	
@@ -78,17 +79,20 @@ public class Player {
 	public void initialize() {
 		setHP(20);
 		setTimer(1000);
-		setAC(16);
+		setAC(13);
 		setAttackBonus(5);
 		setDamage(5);
 		setCurrentHP(19);
+		killCount = 0;
 	}
 	
 	public void winGame() {
-		
+		System.out.println("You have won the game");
+		System.exit(0);
 	}
 	
 	public void loseGame() {
-		
+		System.out.println("You have lost the game");
+		System.exit(0);
 	}
 }

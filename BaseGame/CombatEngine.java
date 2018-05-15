@@ -19,7 +19,7 @@ public class CombatEngine {
 			attackEnemy(p, e);
 		}
 		if (command.toUpperCase().equals("STATS")) {
-			System.out.println("Your current HP is: " + p.getHealth());
+			System.out.println("Your current HP is: " + p.currentHp + " / " + "p.hp");
 		}
 		if(e.hp>0) {
 			if(CombatStatus) {
@@ -56,8 +56,13 @@ public class CombatEngine {
 			System.out.println("You hit the " + e.name + " for " + dmg + " damge.");
 			if (e.hp <= 0) {
 				System.out.println("You have defeated the " + e.name);
+				p.killCount = p.killCount + 1;
+				System.out.println("Your kill count is: " + p.killCount);
 				CombatStatus = false;
 			}
+		}
+		else {
+			System.out.println("You missed the enemy. Thats okay, you are a storm trooper after all!");
 		}
 	}
 	

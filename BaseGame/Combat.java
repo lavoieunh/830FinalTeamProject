@@ -16,7 +16,7 @@ public class Combat {
 		
 		CombatEngine c = new CombatEngine();
 		
-		System.out.println("You are attacked by a " + e.name);
+		System.out.println("A " + e.name + " has appeard. Time to fight!");
 		
 		while(gameOn) {
 			

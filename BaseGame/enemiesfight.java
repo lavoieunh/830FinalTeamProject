@@ -7,17 +7,17 @@ public class enemiesfight {
 		enemies Rebels = new enemies();
 		
 		public void setEwoks() {
-			Ewok.ac = 6;
-			Ewok.attackBonus = 5;
-			Ewok.damage = 2;
-			Ewok.hp = 5;
+			Ewok.ac = 10;
+			Ewok.attackBonus = 7;
+			Ewok.damage = 4;
+			Ewok.hp = 10;
 			Ewok.name = "Ewok";
 		}
 		public void setRebels() {
-			Rebels.ac = 4;
-			Rebels.attackBonus = 4;
-			Rebels.damage = 1;
-			Rebels.hp = 6;
+			Rebels.ac = 13;
+			Rebels.attackBonus = 9;
+			Rebels.damage = 6;
+			Rebels.hp = 14;
 			Rebels.name = "Rebel";
 		}
 
@@ -25,7 +25,7 @@ public class enemiesfight {
 			dice diceSet = new dice();
 			enemies enemy = new enemies();
 			int roll = diceSet.roll(2, 1);
-			System.out.println("" + roll);
+			//System.out.println("" + roll);
 			if (roll==1) {
 				enemy = Ewok;
 				setEwoks();

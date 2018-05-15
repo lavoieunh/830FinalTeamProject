@@ -25,9 +25,15 @@ public class MedPack extends Item {
 			//MedPack numerical value will decrease by one with each use as stated in Item.java public void UseItem()
 			super.UseItem(); //runs the super class UseItem()
 			//each time the MedPack is used, player's health increases by 1
-			p.changeHealth(1);
-			System.out.println("Player Health increased by 1");
-			System.out.println("Current player Health " + p.getHealth());
+			if (p.currentHp < p.hp) {
+			p.currentHp = p.currentHp + 1;
+			p.timer = p.timer - 1;
+			System.out.println("Player used Medpack: Health increased by 1, while using 1 parsec of time!");
+			System.out.println("Current player Health " + p.currentHp + " / " + p.hp);
+			}
+			else if (p.currentHp >= p.hp) {
+				System.out.println("You are too healthy for the medpack!");
+			}
 		}
 		else {
 			System.out.println("No MedPack available");

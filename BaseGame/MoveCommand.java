@@ -65,6 +65,7 @@ public class MoveCommand implements Commandable {
 		g.GameMap.setLocation("@", (int)p.x, (int)p.y);
 		g.MapMe.doCommand(g);
 		g.player.countDown(1);
+		g.player.checkTime();
 		
 		//UserInterface.UserOutput(String.valueOf(g.GameMap.getPVP(g.GameMap.getLocation(), "o").distance(-1,  -1))); //debug
 		//UserInterface.UserOutput((g.GameMap.getPVP(g.GameMap.getLocation(), "o").toString()));	
@@ -85,6 +86,8 @@ public class MoveCommand implements Commandable {
 			g.FightMeBro.battle(g.player, g.BaddyMe.randMonster());
 			g.GameMap.setLocation(".", (int)pt.x, (int)pt.y); // needs to have a true / false return update to this if pve success.
 			g.MapMe.doCommand(g);
+			g.player.countDown(5);
+			g.player.checkTime();
 		}
 			
 

@@ -15,20 +15,22 @@ public class RestCommand implements Commandable {
 	@Override
 	public void doCommand(MyGame g) {
 		
-				if (g.player.getTotalHealth() > g.player.getHealth());
+				
+				if (g.player.currentHp >= g.player.hp)
 				{
 					System.out.println("All healthy");
 					
 				} 
-				if (g.player.getHealth() < g.player.getTotalHealth());  
+				if (g.player.currentHp < g.player.hp)  
 				{
-					int hp = g.player.getHealth();
-					hp = hp + 5;
-					System.out.println("You have rested for 5 parsecs and recovered 5 HP. Your total is: " + g.player.getHealth());
-					resting = hp;
-					g.player.changeHealth(resting); 
+					g.player.currentHp = g.player.currentHp + 5;
+					if (g.player.currentHp > g.player.hp) {
+						g.player.currentHp = g.player.hp;
+					}
+					System.out.println("You have rested for 5 parsecs and recovered 5 HP. Your total is: " + g.player.currentHp + " / " + g.player.hp);
 					g.player.countDown(5);
-				}
+					g.player.checkTime();
+				}	
 						
 		
 		
